@@ -1,4 +1,4 @@
-📚 Daily Knowledge App
+📚 Daily Knowledge App:
 Flutter app that displays one useful fact per screen.
 
 Team:
