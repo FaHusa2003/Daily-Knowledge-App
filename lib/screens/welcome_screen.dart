@@ -8,7 +8,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8E1F4), // خلفية زهري هادي زي الهوم
+      backgroundColor: const Color(0xFFF8E1F4),
       body: GestureDetector(
         onVerticalDragUpdate: (details) {
           if (details.delta.dy < -8) {
@@ -29,7 +29,7 @@ class WelcomeScreen extends StatelessWidget {
                     Icon(
                       Icons.lightbulb_outline,
                       size: 80,
-                      color: Color(0xFF5C6BC0), // بنفسجي مثل أيقونات الهوم
+                      color: Color(0xFF5C6BC0),
                     ),
 
                     SizedBox(height: 20),
@@ -40,7 +40,7 @@ class WelcomeScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 26,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFF5C6BC0), // بنفسجي مثل أيقونات الهوم
+                        color: Color(0xFF5C6BC0),
                       ),
                     ),
                   ],
@@ -54,7 +54,7 @@ class WelcomeScreen extends StatelessWidget {
               child: Icon(
                 Icons.keyboard_arrow_up,
                 size: 50,
-                color: Color(0xFF5C6BC0), // بنفسجي مثل أيقونات الهوم
+                color: Color(0xFF5C6BC0),
               ),
             ),
           ],
