@@ -38,7 +38,6 @@ class _ThemesScreenState extends State<ThemesScreen> {
                 itemCount: themeColors.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-
                   crossAxisSpacing: 20,
                   mainAxisSpacing: 20,
                 ),
