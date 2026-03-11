@@ -1,8 +1,6 @@
-//تم تعديل ايقونة المصدر ووضع نص المصدر فيها وحذف الشريط السفلي
-//ووضع الايقونات في دوائر شفافة وتغيير لون الخلفية
 import 'package:flutter/material.dart';
-import 'topics_screen.dart';
 import 'themes_screen.dart';
+import 'topics_screen.dart';
 import 'settings_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -19,118 +17,131 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFF8E1F4),
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: const Text("المعلومة اليومية"),
-        backgroundColor: const Color(0xFFF8E1F4),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            const SizedBox(height: 40),
+    Color themeColor = Theme.of(context).scaffoldBackgroundColor;
 
-            const Expanded(
-              child: Center(
-                child: Text(
-                  "هل تعلم أن العسل لا يفسد أبداً؟",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+    return Scaffold(
+      appBar: AppBar(title: const Text("المعلومة اليومية"), centerTitle: true),
+
+      body: Container(
+        width: double.infinity,
+        color: themeColor,
+
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              const SizedBox(height: 40),
+
+              const Expanded(
+                child: Center(
+                  child: Text(
+                    "هل تعلم أن العسل لا يفسد أبداً؟",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
               ),
-            ),
 
-            // أيقونات التفاعل تحت المعلومة مباشرة بدون دوائر
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.star_border, size: 28),
-                  onPressed: () {
-                    // وظيفة المفضلة لاحقاً
-                  },
-                ),
-                const SizedBox(width: 25),
-                IconButton(
-                  icon: const Icon(Icons.info_outline, size: 28),
-                  onPressed: () {
-                    showSource(context);
-                  },
-                ),
-                const SizedBox(width: 25),
-                IconButton(
-                  icon: const Icon(Icons.share, size: 28),
-                  onPressed: () {
-                    // وظيفة المشاركة لاحقاً
-                  },
-                ),
-              ],
-            ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    icon: const Icon(
+                      Icons.star_border,
+                      color: Colors.white,
+                      size: 28,
+                    ),
+                    onPressed: () {},
+                  ),
 
-            const SizedBox(height: 25),
+                  const SizedBox(width: 25),
 
-            // أيقونات التنقل للشاشات الأخرى مع دوائر صغيرة زي ما كان
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                CircleAvatar(
-                  radius: 25,
-                  backgroundColor: Colors.black.withOpacity(0.1),
-                  child: IconButton(
-                    icon: const Icon(Icons.menu_book),
+                  IconButton(
+                    icon: const Icon(
+                      Icons.info_outline,
+                      color: Colors.white,
+                      size: 28,
+                    ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const TopicsScreen(),
-                        ),
-                      );
+                      showSource(context);
                     },
                   ),
-                ),
-                CircleAvatar(
-                  radius: 25,
-                  backgroundColor: Colors.black.withOpacity(0.1),
-                  child: IconButton(
-                    icon: const Icon(Icons.color_lens),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ThemesScreen(),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                CircleAvatar(
-                  radius: 25,
-                  backgroundColor: Colors.black.withOpacity(0.1),
-                  child: IconButton(
-                    icon: const Icon(Icons.settings),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const SettingsScreen(),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
 
-            const SizedBox(height: 20),
-          ],
+                  const SizedBox(width: 25),
+
+                  IconButton(
+                    icon: const Icon(
+                      Icons.share,
+                      color: Colors.white,
+                      size: 28,
+                    ),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 25),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CircleAvatar(
+                    radius: 25,
+                    backgroundColor: Colors.white24,
+                    child: IconButton(
+                      icon: const Icon(Icons.menu_book, color: Colors.white),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const TopicsScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+
+                  CircleAvatar(
+                    radius: 25,
+                    backgroundColor: Colors.white24,
+                    child: IconButton(
+                      icon: const Icon(Icons.color_lens, color: Colors.white),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ThemesScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+
+                  CircleAvatar(
+                    radius: 25,
+                    backgroundColor: Colors.white24,
+                    child: IconButton(
+                      icon: const Icon(Icons.settings, color: Colors.white),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SettingsScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );

@@ -1,4 +1,3 @@
-// تم تعديل السهم للسحب بلا الضغط عليه و تعديل النص إالى المنتصف
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
 
@@ -8,7 +7,6 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8E1F4),
       body: GestureDetector(
         onVerticalDragUpdate: (details) {
           if (details.delta.dy < -8) {
@@ -18,46 +16,42 @@ class WelcomeScreen extends StatelessWidget {
             );
           }
         },
-        child: Column(
-          children: [
-            // الجزء الأوسط
-            Expanded(
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Icon(
-                      Icons.lightbulb_outline,
-                      size: 80,
-                      color: Color(0xFF5C6BC0),
-                    ),
+        child: Container(
+          width: double.infinity,
+          color: Theme.of(context).scaffoldBackgroundColor,
+          child: Column(
+            children: [
+              const Spacer(),
 
-                    SizedBox(height: 20),
+              const Icon(
+                Icons.lightbulb_outline,
+                size: 80,
+                color: Colors.white,
+              ),
 
-                    Text(
-                      "مرحباً بك في\nالمعلومة اليومية",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 26,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF5C6BC0),
-                      ),
-                    ),
-                  ],
+              const SizedBox(height: 20),
+
+              const Text(
+                "مرحباً بك في\nالمعلومة اليومية",
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
               ),
-            ),
 
-            // السهم تحت في المنتصف
-            const Padding(
-              padding: EdgeInsets.only(bottom: 30),
-              child: Icon(
-                Icons.keyboard_arrow_up,
-                size: 50,
-                color: Color(0xFF5C6BC0),
+              const Spacer(),
+
+              const Padding(
+                padding: EdgeInsets.only(bottom: 30),
+                child: Icon(
+                  Icons.keyboard_arrow_up,
+                  size: 40,
+                  color: Colors.white,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
