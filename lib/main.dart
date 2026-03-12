@@ -1,4 +1,4 @@
-/*import 'package:flutter/material.dart'; // نكتبه في مطلع كل ملف
+import 'package:flutter/material.dart'; // نكتبه في مطلع كل ملف
 //استدعاء ملف الدارت من مجلد فلاتر الموجود في السي
 import 'screens/welcome_screen.dart'; // مختصر لاننا داخل نفس المشروع
 //import 'package:daily_knowledge/screens/welcome_screen.dart'; وهذا صح
@@ -9,25 +9,18 @@ void main() {
   // فونكشن محجوزة من قبل
 }
 
-class MyApp extends StatelessWidget {
-  //StatelessWidget > اليوزر ما يتفاعل معه
+/*class MyApp extends StatelessWidget {
+  StatelessWidget > اليوزر ما يتفاعل معه
   const MyApp({super.key});
   @override // لما نستدعي الكلاسات في أكثر من مكان نستخدمها للفصل بينهم
   Widget build(BuildContext context) {
-    // build ميثود مشترك في كل ودجيت
+   build ميثود مشترك في كل ودجيت
     return const MaterialApp(
-      //MaterialApp اساس مهم . تحدد المعلومات الأساسية والثابتة داخل الآبلكيشن
+      MaterialApp اساس مهم . تحدد المعلومات الأساسية والثابتة داخل الآبلكيشن
       debugShowCheckedModeBanner: false, // يروح الشريط الي في الركن
       home: WelcomeScreen(), // تفتح ملف اخر مباشرة
     );
-  }
-}*/
-import 'package:flutter/material.dart';
-import 'screens/welcome_screen.dart';
-
-void main() {
-  runApp(const MyApp());
-}
+  }}*/
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
